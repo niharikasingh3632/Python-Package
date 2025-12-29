@@ -1,6 +1,13 @@
+import os
+import torch
+from PIL import Image
+from transformers import AutoProcessor, AutoModelForZeroShotObjectDetection 
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from create_bbox.bbox import BBox 
 
 class GroundingDINORun:
-    def __init__(self, *args, **kwargs):
+    def __init__(self, input_folder, output_folder, text_prompt, threshold=0.4):
         self.input_folder = input_folder
         self.output_folder = output_folder
         self.device = "cuda" if torch.cuda.is_available() else "cpu" 
@@ -10,14 +17,6 @@ class GroundingDINORun:
         self.threshold = threshold
 
     def run(self):
-
-        import torch
-        import os
-        from PIL import Image
-        from transformers import AutoProcessor, AutoModelForZeroShotObjectDetection 
-        import sys
-        sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        from create_bbox.bbox import BBox 
 
         processor = AutoProcessor.from_pretrained(self.model_id)
         model = AutoModelForZeroShotObjectDetection.from_pretrained(self.model_id).to(self.device)

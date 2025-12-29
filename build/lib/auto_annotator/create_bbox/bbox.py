@@ -1,3 +1,5 @@
+from PIL import ImageDraw
+
 class BBox:
     def __init__(self, results, image, output_path):
         self.results = results
@@ -5,9 +7,6 @@ class BBox:
         self.output_path = output_path
 
     def create_bbox(self):
-        
-        from PIL import ImageDraw
-
         draw = ImageDraw.Draw(self.image)
         for result in self.results:
             boxes = result["boxes"].cpu().numpy()
