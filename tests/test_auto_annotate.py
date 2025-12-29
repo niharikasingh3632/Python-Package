@@ -1,4 +1,4 @@
-from auto_annotator import AutoAnnotator 
+from nycto_annotator import AutoAnnotator 
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent

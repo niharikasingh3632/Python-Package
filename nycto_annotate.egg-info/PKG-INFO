@@ -1,5 +1,5 @@
-Metadata-Version: 2.4
-Name: auto_annotator
+Metadata-Version: 1.0
+Name: nycto_annotate
 Version: 0.1.0
 Summary: A simple auto annotator package
 Author-email: Niharika <nyctophilicenigma@gmail.com>
@@ -8,11 +8,10 @@ Project-URL: Homepage, https://github.com/niharikasingh3632/Python-Package
 Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: torch==2.9.1
-Requires-Dist: pillow==12.0.0
-Requires-Dist: transformers==4.57.3
-Dynamic: license-file
+Requires-Dist: torch==2.9.1+cu128
+pillow==12.0.0
+transformers==4.57.3
 
-# Auto Annotator
+# nycto_annotate
 
-Package for Auto annotation using different models
+A simple auto annotator package that uses torch, transformers and pillow to train and make predictions with a RandomForest model on the Iris dataset.
