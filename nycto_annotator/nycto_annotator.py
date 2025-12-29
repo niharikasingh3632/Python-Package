@@ -1,5 +1,5 @@
 import os
-from nycto_annotate.grounding_dino.run import GroundingDINORun
+from nycto_annotator.grounding_dino.run import GroundingDINORun
 
 
 available_models = ["grounding_dino"]
