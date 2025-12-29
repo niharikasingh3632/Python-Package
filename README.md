@@ -1,3 +1,3 @@
-# Tracker
+# Auto Annotator
 
-Package for object tracking
+Package for Auto annotation using different models
