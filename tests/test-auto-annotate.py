@@ -4,6 +4,7 @@ def test_auto_annotate():
     input_folder = ""
     output_folder = ""
     model_name = ""
+    classes_prompt = {}
     annotator = AutoAnnotator(model_name)
     annotator.run(input_folder, output_folder)
     assert annotator is not None
