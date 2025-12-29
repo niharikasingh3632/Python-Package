@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+auto_annotator/__init__.py
+auto_annotator/auto_annotate.py
+auto_annotator.egg-info/PKG-INFO
+auto_annotator.egg-info/SOURCES.txt
+auto_annotator.egg-info/dependency_links.txt
+auto_annotator.egg-info/requires.txt
+auto_annotator.egg-info/top_level.txt
+auto_annotator/create_bbox/__init__.py
+auto_annotator/create_bbox/bbox.py
+auto_annotator/grounding_dino/__init__.py
+auto_annotator/grounding_dino/run.py
+tests/test_auto_annotate.py
+tests/test_local_script.py
