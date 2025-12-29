@@ -7,15 +7,14 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from create_bbox.bbox import BBox 
 
 class GroundingDINORun:
-    def __init__(self, input_folder, output_folder, text_prompt, box_threshold=0.4, text_threshold=0.3):
+    def __init__(self, input_folder, output_folder, text_prompt, threshold=0.4):
         self.input_folder = input_folder
         self.output_folder = output_folder
         self.device = "cuda" if torch.cuda.is_available() else "cpu" 
         self.model_id = "IDEA-Research/grounding-dino-base"
         self.text_prompt = text_prompt
         self.text = self.process_text_prompt()
-        self.box_threshold = box_threshold
-        self.text_threshold = text_threshold
+        self.threshold = threshold
 
     def run(self):
 
@@ -31,8 +30,7 @@ class GroundingDINORun:
             results = processor.post_process_grounded_object_detection(
                 outputs,
                 inputs.input_ids,
-                box_threshold=self.box_threshold,
-                text_threshold=self.text_threshold,
+                threshold=self.threshold,
                 target_sizes=[image.size[::-1]]
             )
             

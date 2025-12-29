@@ -1,4 +1,4 @@
-from grounding_dino import GroundingDINORun
+from auto_annotator.grounding_dino.run import GroundingDINORun
 
 
 available_models = ["grounding_dino"]
@@ -10,13 +10,14 @@ class AutoAnnotator:
         if self.model_name not in available_models:
             raise ValueError(f"Model {self.model_name} is not available. Available models: {available_models}")
 
-    def run(self, input_folder, output_folder):
+    def run(self, input_folder, output_folder, classes_prompt):
         self.input_folder = input_folder
         self.output_folder = output_folder
+        self.classes_prompt = classes_prompt    
 
         if self.model_name == "grounding_dino":
             try:
-                runner = GroundingDINORun(self.input_folder, self.output_folder)
+                runner = GroundingDINORun(self.input_folder, self.output_folder, self.classes_prompt)
                 runner.run()
             except Exception as e:
                 print(f"Error running GroundingDINORun: {e}")
