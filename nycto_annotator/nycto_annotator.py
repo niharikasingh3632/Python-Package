@@ -21,7 +21,7 @@ class AutoAnnotator:
         if self.model_name == "grounding_dino":
             try:
                 runner = GroundingDINORun(self.input_folder, self.output_folder, self.classes_prompt)
-                runner.run()
+                runner.run_GroundingDINORun()
             except Exception as e:
                 print(f"Error running GroundingDINORun: {e}")
 

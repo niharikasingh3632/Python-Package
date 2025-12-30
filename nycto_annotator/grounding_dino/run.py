@@ -9,7 +9,7 @@ class GroundingDINORun:
         self.text = self.process_text_prompt()
         self.threshold = threshold
 
-    def run(self):
+    def run_GroundingDINORun(self):
 
         import torch
         import os
