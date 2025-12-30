@@ -1,5 +1,6 @@
 
 class GroundingDINORun:
+    import torch
     def __init__(self, input_folder, output_folder, text_prompt, threshold=0.3):
         self.input_folder = input_folder
         self.output_folder = output_folder
